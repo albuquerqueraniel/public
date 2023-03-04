@@ -22,10 +22,10 @@
               F = NodalVerticalStressesSoil(INod) * A
               FWP = NodalPressuresWater(INod) * A
               NiX = ReducedDof(INod) + 1
-			  
-			  do IDim = 1, NVECTOR !over coordinates
-				IConditionXYZ(IDim) = 	NodeCndVisSld2(INod, IDim)
-			  end do
+              
+              do IDim = 1, NVECTOR !over coordinates
+                IConditionXYZ(IDim) = 	NodeCndVisSld2(INod, IDim)
+              end do
 
               if (IConditionXYZ(1)==1) then ! Normal direction ... give force 
                 FX = F * K0Value
